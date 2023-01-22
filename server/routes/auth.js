@@ -9,6 +9,7 @@ var corsOptions = {
 const mongoose=require('mongoose')
 const requireLogin=require('../middleware/requireLogin')
 const User=mongoose.model("User");
+const Ans=mongoose.model("Ans");
 const Doctor=mongoose.model("Doctor");
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
@@ -131,5 +132,37 @@ router.post('/doc-login',(req,res)=>{
             console.log(err);
         })
     })
+})
+
+router.post('/answers',(req,res)=>{
+    const {text,postId,docId}=req.body;
+   console.log(req.body);
+    
+   if(!text||!postId||!docId)
+   {
+return res.status(404).json({"message":"error"})
+   }
+   const ans=new Ans({
+text,
+  postId,
+    docId
+
+})
+ans.save()
+.then(ans=>{res.json({message:"successfully signed up"})})
+.catch(err=>{console.log(err)})
+
+
+    // .populate("postId","_id")
+    // .populate("docId","_id")
+    // .exec((err,result)=>{
+    //     if(err)
+    //     {
+    //         return res.status(422).json({error:err})
+    //     }
+    //     else{
+    //         res.json(result)
+    //     }
+    // })
 })
 module.exports=router;

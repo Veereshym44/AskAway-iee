@@ -50,7 +50,10 @@ width: 100%;
   justify-content: space-around;
 
 }
-.textarea
+.textarea{
+  width: 80%;
+  
+}
 .create-post-container{
   align-items: center;
 }

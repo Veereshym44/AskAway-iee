@@ -13,8 +13,7 @@ export default function Create_post() {
       body:"",
       
   })
-  const [url,setUrl]=useState("");
-  const [image,setImage]=useState("")
+ 
 let name,value
 const handleInput=(e)=>{
   name=e.target.name
@@ -47,7 +46,7 @@ function submitPost(){
     if(data.error)
     {
       M.toast({html:data.error,classes:"#c62828 red darken-3"})
-      console.log(url)
+  
     }
     else
     {

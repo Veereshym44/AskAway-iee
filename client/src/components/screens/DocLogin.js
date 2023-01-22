@@ -39,11 +39,11 @@ const PostData=async(e)=>{
     }
     else{
       M.toast({html:data.message})
-      dispatch({type:"USER",payload:data.user});
-      console.log(data.token)
+      dispatch({type:"DOCTOR",payload:data.user});
+    
       localStorage.setItem("jwt",data.token)
-      localStorage.setItem("user",JSON.stringify(data.user))
-      Navigate('/')
+      localStorage.setItem("doctor",JSON.stringify(data.doctor))
+      Navigate('/');
     }
   })
 
@@ -61,7 +61,7 @@ const PostData=async(e)=>{
         <input type='submit' name='signup' className="btn waves-effect waves-light #64b5f6 blue darken-1"  value="Login" onClick={PostData}/>
         <br/>
 
-        <NavLink className="nav-links-login"  to="/signup">Dont have a account? Signup</NavLink>
+        <NavLink className="nav-links-login"  to="/doc-signup">Dont have a account? Signup</NavLink>
   </form>
       </div>
     </div>
