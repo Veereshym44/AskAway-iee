@@ -44,16 +44,3 @@ To get started with SocialSphere, follow these steps:
     npm start
     ```
 
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](Documentation/CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the MIT License.
-
-For more information, please refer to the [Documentation](Documentation).
-
-[Visit us on GitHub](https://github.com/your-username/socialsphere)
-
-Generated with :heart: using GPT-3.
